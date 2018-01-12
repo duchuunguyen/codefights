@@ -9,13 +9,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class XmlReader {
     public static Collection<Integer> getIdsByMessage(String xmlStr, String message) {
-        List<Integer> result = new ArrayList<>();
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -30,7 +28,7 @@ public class XmlReader {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        return result;
+        return new ArrayList<>();
     }
 
     public static void main(String[] args) {
